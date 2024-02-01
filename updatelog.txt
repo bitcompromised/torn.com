@@ -1,0 +1,23 @@
+V2 -> V3
+
+**Backend Updates**
+
+!!!!!ModuleLoader.mjs -> Loader.mjs
+
+func get
+	+ synchronous return of present modules
+	+ asynchronous return of imported modules
+
++func set( Key, Value)
+	~ set values. used for more efficient static imported modules
+
++func Preload()
+	+ sets all static imported modules
+	+ asynchronously load required modules in correct order
+
+!!!!!Http.mjs -> Request.mjs
+
+func get
+	+ parse address to use import(http|https).get method
+	+ default error handling return {error:{ error: statusCode, message: error.message }}
+
